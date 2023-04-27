@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Button } from "../";
+import { Link } from "@reach/router"
 
 const Nav = styled.nav`
   padding: 0.5rem 1rem;
@@ -35,6 +36,7 @@ export default () => {
         Ship<b>mate</b>
       </Logo>
       <div>
+        <Link to="/book">Book</Link>
         <Button type="button" primary>
           Login
         </Button>
