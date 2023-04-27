@@ -6,7 +6,7 @@ import { Router } from "@reach/router";
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <Router>
-      <App path="/*" />
+      <App path="/celerity_assignment/*" />
     </Router>
   </React.StrictMode>
 );
