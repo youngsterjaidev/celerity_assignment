@@ -2,15 +2,45 @@ import React from "react";
 import styled from "styled-components";
 import { Button } from "../";
 
-const Nav = styled.nav``;
+const Nav = styled.nav`
+  padding: 0.5rem 1rem;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  background-color: ${(props) => props.theme.backgroundColor};
+  z-index: 1;
+
+  & > div:nth-of-type(2) {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 1ch;
+  }
+`;
+
+const Logo = styled.div`
+  font-size: 1.5rem;
+
+  & b {
+    color: ${(props) => props.theme.primaryColor};
+  }
+`;
 
 export default () => {
   return (
     <Nav>
-      <div></div>
+      <Logo>
+        Ship<b>mate</b>
+      </Logo>
       <div>
-        <Button type="button">Login</Button>
-        <Button type="button">Learn More</Button>
+        <Button type="button" primary>
+          Login
+        </Button>
+        <Button type="button" secondary>
+          Learn More
+        </Button>
       </div>
     </Nav>
   );

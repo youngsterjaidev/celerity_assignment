@@ -9,27 +9,44 @@ interface Props {
   large?: boolean;
 }
 
-const Button = styled.button`
-    border: none;
-    border-radius: 0.7rem;
-    font-family: 'Figtree', sans-serif;
-    font-weight: 600;
-    transition: all 0.5s;
+export const Button = styled.button<Props>`
+  border: none;
+  border-radius: 0.5rem;
+  font-family: "Figtree", sans-serif;
+  font-weight: 600;
+  transition: all 0.5s;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
 
-    ${(props) =>
-      props.primary &&
-      `
-        background: ${(props) => props.theme.primary}; 
-        color: ${(props) => props.theme.backgroundColor};
-        border: 1px solid ${(props) => props.theme.primary};
+  ${(props) => {
+    console.log(props);
+    return ``;
+  }}
+
+  ${(props) =>
+    props.primary &&
+    `
+      background: ${props.theme.primaryColor}; 
+      color: ${props.theme.backgroundColor};
+      border: 2px solid ${props.theme.primaryColor};
+
+      &:hover {
+        background: ${props.theme.primaryActive};
+      }
+        
     `}
 
-    ${(props) =>
-      props.secondary &&
-      `
-        background: ${(props) => props.theme.background}; 
-        color: ${(props) => props.theme.textColor}; 
-        border: 1px solid ${(props) => props.theme.primary};
+  ${(props) =>
+    props.secondary &&
+    `
+      background: ${props.theme.backgroundColor}; 
+      color: ${props.theme.primaryColor}; 
+      border: 2px solid ${props.theme.primaryColor};
+
+      &:hover {
+        background: ${props.theme.primaryColor};
+        color: ${props.theme.backgroundColor};
+      }
     `}
 
     ${(props) => props.small && ``}
@@ -38,8 +55,8 @@ const Button = styled.button`
 
     ${(props) => props.large && ``}
 
-    &:hover {
-        background: ${(props) => props.theme.primaryActive}; 
-    }
-
+    @media (max-width: 550px) {
+    display: block;
+    width: 100%;
+  }
 `;
