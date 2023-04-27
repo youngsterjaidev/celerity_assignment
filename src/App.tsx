@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Home, Shipping, Booking } from "./pages";
 import { defaultTheme } from "./utils/theme";
+import { ThemeProvider } from "styled-components"
+import { Router } from "@reach/router"
 
 function App() {
   const [] = useState();
